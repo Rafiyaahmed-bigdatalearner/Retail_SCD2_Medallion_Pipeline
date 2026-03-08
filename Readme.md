@@ -88,3 +88,17 @@ Analytics-ready datasets: Cleaned and aggregated data enables customer segmentat
 Scalable Architecture: The modular Medallion design allows the team to easily process more datasets or business units.
 
 Actionable Insights: Aggregations like orders by state help business teams make data-driven decisions.
+
+
+## How to Run
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/Rafiyaahmed-bigdatalearner/Retail_SCD2_Medallion_Pipeline.git
+cd Retail_SCD2_Medallion_Pipeline
+
+2. Install dependencies:
+pip install -r requirements.txt
+
+3. Run the ETL pipeline using Spark:
+spark-submit src/application_main.py
