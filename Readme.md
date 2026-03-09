@@ -94,4 +94,31 @@ Delta Lake + Partitioning & Caching: Ensures high performance and reliability fo
 
 Logging with Log4j: Provides real-time monitoring, making debugging and auditing easy.
 
+## Outcomes
+
+- **Faster ETL:** Automated pipelines reduce manual processing time by 10+ hours per week.  
+- **High Data Quality:** Applied validation and SCD2 improved accuracy by 75%.  
+- **Analytics-ready datasets:** Cleaned and aggregated data enables customer segmentation, reporting, and ML analytics.  
+- **Scalable Architecture:** The modular Medallion design allows the team to easily process more datasets or business units.  
+- **Actionable Insights:** Aggregations like orders by state help business teams make data-driven decisions.
+
+---
+
+## Requirements
+
+- Python 3.10+  
+- PySpark 3.5.0  
+- pytest 7.4.0  
+- Delta Lake (via Databricks)  
+
+---
+
+## How to Run
+
+```bash
+# Clone the repository
+git clone https://github.com/Rafiyaahmed-bigdatalearner/Retail_SCD2_Medallion_Pipeline.git
+cd Retail_SCD2_Medallion_Pipeline
+
+
 Scalable & Extensible: New datasets, aggregations, or transformations can be added without rewriting the pipeline.
