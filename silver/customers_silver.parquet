@@ -1,8 +1,1 @@
-| customer_id | customer_fname | customer_lname | city        | state | start_date | end_date | is_current |
-| ----------- | -------------- | -------------- | ----------- | ----- | ---------- | -------- | ---------- |
-| 1           | Richard        | Hernandez      | Brownsville | TX    | 2013-07-25 | NULL     | True       |
-| 2           | Mary           | Barrett        | Littleton   | CO    | 2013-07-25 | NULL     | True       |
-| 3           | Ann            | Smith          | Caguas      | PR    | 2013-07-25 | NULL     | True       |
-| 4           | Mary           | Jones          | San Marcos  | CA    | 2013-07-25 | NULL     | True       |
-| 5           | Robert         | Hudson         | Caguas      | PR    | 2013-07-25 | NULL     | True       |
 
