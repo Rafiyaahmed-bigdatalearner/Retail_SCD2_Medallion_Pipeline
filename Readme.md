@@ -37,7 +37,7 @@ Gold Layer (Aggregations by State)
 
 ---
 
-## Directory Structure
+## Project Structure
 ```text
 Retail_SCD2_Medallion_Pipeline/
 ├── bronze/                     # Raw input CSVs
