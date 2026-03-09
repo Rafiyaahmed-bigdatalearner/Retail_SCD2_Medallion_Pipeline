@@ -56,29 +56,44 @@ Retail_SCD2_Medallion_Pipeline/
 ├── requirements.txt
 └── .gitignore
 
+Sample Output
+Silver Layer (customers_silver.parquet)
+
+| customer_id | customer_fname | customer_lname | city        | state |
+| ----------- | -------------- | -------------- | ----------- | ----- |
+| 1           | Richard        | Hernandez      | Brownsville | TX    |
+| 2           | Mary           | Barrett        | Littleton   | CO    |
+| 3           | Ann            | Smith          | Caguas      | PR    |
+| 4           | Mary           | Jones          | San Marcos  | CA    |
+| 5           | Robert         | Hudson         | Caguas      | PR    |
+
+Gold Layer (orders_by_state.parquet)
+
+| state | total_orders |
+| ----- | ------------ |
+| TX    | 15           |
+| CA    | 20           |
+| PR    | 40           |
+| NJ    | 10           |
+| NY    | 12           |
+
 Why This Approach
 
-This explains why you designed your pipeline the way you did:
+Medallion Architecture (Bronze → Silver → Gold): Separates raw, cleaned, and analytics-ready data for better organization, traceability, and reusability.
 
-Medallion Architecture (Bronze → Silver → Gold):
-Separates raw, cleaned, and analytics-ready data for better organization, traceability, and reusability.
+SCD Type 2 (Slowly Changing Dimension): Tracks historical changes in customer data to maintain accurate historical analytics.
 
-SCD Type 2 (Slowly Changing Dimension):
-Tracks historical changes in customer data to maintain accurate historical analytics.
+Modular PySpark Functions: Functions like filter_closed_orders(), apply_scd2(), and count_orders_state() make the pipeline reusable, maintainable, and testable.
 
-Modular PySpark Functions:
-Functions like filter_closed_orders(), apply_scd2(), and count_orders_state() make the pipeline reusable, maintainable, and testable.
+Delta Lake + Partitioning & Caching: Ensures high performance and reliability for large datasets.
 
-Delta Lake + Partitioning & Caching:
-Ensures high performance and reliability for large datasets.
+Logging with Log4j: Provides real-time monitoring, making debugging and auditing easy.
 
-Logging with Log4j:
-Provides real-time monitoring, making debugging and auditing easy.
+Scalable & Extensible: New datasets, aggregations, or transformations can be added without rewriting the pipeline.
 
-Scalable & Extensible:
-New datasets, aggregations, or transformations can be added without rewriting the pipeline.
 
 Outcomes
+
 Faster ETL: Automated pipelines reduce manual processing time by 10+ hours per week.
 
 High Data Quality: Applied validation and SCD2 improved accuracy by 75%.
@@ -89,16 +104,15 @@ Scalable Architecture: The modular Medallion design allows the team to easily pr
 
 Actionable Insights: Aggregations like orders by state help business teams make data-driven decisions.
 
+Requirements
 
-## How to Run
+Python 3.10+
 
-1. **Clone the repository:**
-```bash
-git clone https://github.com/Rafiyaahmed-bigdatalearner/Retail_SCD2_Medallion_Pipeline.git
-cd Retail_SCD2_Medallion_Pipeline
+PySpark 3.5.0
 
-2. Install dependencies:
-pip install -r requirements.txt
+pytest 7.4.0
 
-3. Run the ETL pipeline using Spark:
+Delta Lake (via Databricks)
+
+
 spark-submit src/application_main.py
